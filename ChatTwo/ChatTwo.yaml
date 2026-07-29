@@ -1,20 +1,20 @@
 name: Chat 2
 author: Infi, Anna
-punchline: Electric Boogaloo - ♪ A whole new chat, a new fantastic chat window ♪
+punchline: ♪ 全新的聊天體驗，更好用的聊天視窗 ♪
 description: |-
-  Chat 2 is a complete rewrite of the in-game chat window as a plugin.
-  It supports:
+  Chat 2 是以插件形式重新打造的遊戲聊天視窗。
+  支援功能：
 
-  - Unlimited tabs
-  - Tabs that always send to a certain channel
-  - More flexible filtering
-  - RGB channel colouring
-  - Completely variable font size
-  - Sidebar tabs
-  - Unread counts
-  - Emotes
-  - Screenshot mode (obfuscate names)
-repo_url: https://github.com/Infiziert90/ChatTwo
+  - 無限數量的標籤頁
+  - 可指定固定發言頻道的標籤頁
+  - 更靈活的訊息篩選
+  - 自訂 RGB 頻道顏色
+  - 自由調整字體大小
+  - 側邊欄標籤頁
+  - 未讀訊息計數
+  - 表情圖示
+  - 截圖模式（隱藏角色名稱）
+repo_url: https://github.com/cycleapple/ChatTwo
 accepts_feedback: true
 tags:
   - Social
@@ -22,33 +22,13 @@ tags:
   - Chat
   - Replacement
 changelog:  |-
-  **New Feature Added~**
-  - A web interface has been added
-  - *This will not function if your game client is offline or you are logged out of the game*
+  **繁體中文第二輪**
+  - 完成資料庫瀏覽器、進階資料庫操作與搜尋介面的繁中化
+  - 完成內建 Web 聊天介面的登入、標籤頁、訊息輸入與錯誤頁面繁中化
+  - 補齊插件清單的繁體中文說明
 
-  **Main Features**
-  - View in-game chat on any device that has a web browser functionality
-  - Can send chat messages through the web interface directly into the game itself
-  - Easily copy & paste messages
-  - Option for automatic starting the web interface feature
-  - Log lines render limit for faster loading performance [Default 1000]
-
-  **Security**
-  - This feature is not intended to be used outside of your local, private network
-  - Do not forward ports that are described inside the chat2 options panel
-  - Never share your authentication code under any circumstances
-  - Multi-box support is not provided, the web interface will track only the first client
-
-  **Additional Features soon to be Added**
-  - Display errors as small notifications inside the web interface
-
-  **Planned Features**
-  - Multiple Tabs support
-  - Browser specific settings
-  - Stylization support
-
-  **Additional Permissions Note**
-  - Users that wish to expand this to apps or other platforms are welcome to do so
-
-  *Note: An FAQ will be provided in the chat2 thread on the dalamud discord, linked in the About section*
+  **Web 介面安全提醒**
+  - 僅供區域網路內使用，請勿將連接埠轉送至網際網路
+  - 請勿將驗證碼交給其他人
+  - Web 介面僅會連接第一個遊戲客戶端
 

@@ -57,7 +57,7 @@ public class RouteController
     private async Task ExceptionRoute(HttpContextBase ctx, Exception _)
     {
         ctx.Response.StatusCode = 500;
-        await ctx.Response.Send("Internal Server Error, please try again");
+        await ctx.Response.Send("伺服器發生內部錯誤，請稍後再試。");
     }
 
     private async Task AuthRoute(HttpContextBase ctx)
@@ -111,7 +111,7 @@ public class RouteController
         if (name == "" || !EmoteCache.Exists(name))
         {
             ctx.Response.StatusCode = 400;
-            await ctx.Response.Send("Malformed emote name.");
+            await ctx.Response.Send("表情圖示名稱格式錯誤。");
             return;
         }
 
@@ -120,7 +120,7 @@ public class RouteController
         if (emote is null)
         {
             ctx.Response.StatusCode = 400;
-            await ctx.Response.Send("Emote not valid.");
+            await ctx.Response.Send("無效的表情圖示。");
             return;
         }
 
@@ -144,7 +144,7 @@ public class RouteController
         if (RateLimit.TryGetValue(ctx.Request.Source.IpAddress, out var timestamp) && timestamp > currentTick)
         {
             _ = ctx.Request.DataAsString; // Temp fix for Watson.Lite bug #155
-            return await Redirect(ctx, "/", ("message", "Rate limit active (10s)"));
+            return await Redirect(ctx, "/", ("message", "操作過於頻繁，請等待 10 秒。"));
         }
 
         // The next request will be rate limited for 10s
@@ -152,7 +152,7 @@ public class RouteController
 
         var authcode = HttpUtility.ParseQueryString(ctx.Request.DataAsString ?? "").Get("authcode");
         if (authcode == null || authcode != Plugin.Config.WebinterfacePassword)
-            return await Redirect(ctx, "/", ("message", "Authentication failed"));
+            return await Redirect(ctx, "/", ("message", "驗證失敗。"));
 
         var token = WebinterfaceUtil.GenerateSimpleToken();
         Plugin.Config.AuthStore.Add(token);

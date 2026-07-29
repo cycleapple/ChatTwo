@@ -141,16 +141,16 @@ internal sealed class Database : ISettingsTab
         using var wrap = ImGuiUtil.TextWrapPos();
 
         ImGuiUtil.WarningText(Language.Options_Database_Advanced_Warning);
-        if (ImGuiUtil.CtrlShiftButton("Perform maintenance", "Ctrl+Shift: MessageManager.Store.PerformMaintenance()"))
+        if (ImGuiUtil.CtrlShiftButton("執行資料庫維護", "按住 Ctrl+Shift 點擊：執行資料庫維護"))
             Plugin.MessageManager.Store.PerformMaintenance();
 
-        if (ImGuiUtil.CtrlShiftButton("Reload messages from database", "Ctrl+Shift: MessageManager.FilterAllTabs()"))
+        if (ImGuiUtil.CtrlShiftButton("從資料庫重新載入訊息", "按住 Ctrl+Shift 點擊：重新篩選所有標籤頁"))
         {
             Plugin.MessageManager.ClearAllTabs();
             Plugin.MessageManager.FilterAllTabsAsync();
         }
 
-        if (ImGuiUtil.CtrlShiftButton("Inject 10,000 messages", "Ctrl+Shift: creates 10,000 unique messages (async)"))
+        if (ImGuiUtil.CtrlShiftButton("產生 10,000 則測試訊息", "按住 Ctrl+Shift 點擊：非同步建立 10,000 則不同的測試訊息"))
             new Thread(() => InsertMessages(10_000)).Start();
         ImGui.Spacing();
     }

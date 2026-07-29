@@ -116,20 +116,20 @@ public class HostContext
 
     private async Task<bool> DefaultRoute(HttpContextBase ctx)
     {
-        return await ctx.Response.Send("Nothing to see here.");
+        return await ctx.Response.Send("這裡沒有可顯示的內容。");
     }
 
     private async Task CheckAuthenticationCookie(HttpContextBase ctx)
     {
         if (Plugin.Config.AuthStore.Count == 0)
         {
-            await RouteController.Redirect(ctx, "/", ("message", "Invalid session token."));
+            await RouteController.Redirect(ctx, "/", ("message", "工作階段憑證無效。"));
             return;
         }
 
         var cookies = WebserverUtil.GetCookieData(ctx.Request.Headers.Get("Cookie") ?? "");
         if (!cookies.TryGetValue("ChatTwo-token", out var token) || !Plugin.Config.AuthStore.Contains(token))
-            await RouteController.Redirect(ctx, "/", ("message", "Invalid session token."));
+            await RouteController.Redirect(ctx, "/", ("message", "工作階段憑證無效。"));
 
         // Do nothing to let auth pass
     }

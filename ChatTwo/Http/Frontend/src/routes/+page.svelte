@@ -19,13 +19,13 @@
 </script>
 
 <main class="auth">
-    <h1>Authcode</h1>
+    <h1>驗證碼</h1>
     {#if data?.hasWarning }
         <Alert content={data.content} color="warning" dismissible={true}/>
     {/if}
     <form action="/auth" method="POST">
         <label><input type="password" name="authcode"></label>
-        <button type="submit" class="submitButton">Submit</button>
+        <button type="submit" class="submitButton">登入</button>
     </form>
     <div data-sveltekit-preload-data="false">
         <img src="/emote/Sure" alt=":Sure:" data-sveltekit-preload-data="off">

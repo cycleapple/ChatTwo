@@ -63,12 +63,12 @@ public class DbViewer : Window
         RespectCloseHotkey = false;
         DisableWindowSounds = true;
 
-        Plugin.Commands.Register("/chat2Viewer", "Database Viewer", true).Execute += Toggle;
+        Plugin.Commands.Register("/chat2Viewer", "開啟聊天記錄資料庫瀏覽器", true).Execute += Toggle;
     }
 
     public void Dispose()
     {
-        Plugin.Commands.Register("/chat2Viewer", "Database Viewer", true).Execute -= Toggle;
+        Plugin.Commands.Register("/chat2Viewer", "開啟聊天記錄資料庫瀏覽器", true).Execute -= Toggle;
     }
 
     private void Toggle(string _, string __) => Toggle();
@@ -199,7 +199,7 @@ public class DbViewer : Window
     {
         const string addTabPopup = "add-channel-popup";
 
-        if (ImGui.Button("Channels"))
+        if (ImGui.Button("頻道"))
             ImGui.OpenPopup(addTabPopup);
 
         using var popup = ImRaii.Popup(addTabPopup);

@@ -51,7 +51,7 @@ public static class SearchSelector
             ImGui.SetKeyboardFocusHere(0);
         }
 
-        if (ImGui.InputTextWithHint("##ExcelSheetSearch", "Search", ref SheetSearchText, 128, ImGuiInputTextFlags.AutoSelectAll))
+        if (ImGui.InputTextWithHint("##ExcelSheetSearch", "搜尋", ref SheetSearchText, 128, ImGuiInputTextFlags.AutoSelectAll))
             FilteredSearchSheet = null;
 
         FilteredSearchSheet ??= filteredSheet.Where(s => searchPredicate(s, SheetSearchText)).ToArray();

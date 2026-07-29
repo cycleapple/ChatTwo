@@ -77,7 +77,7 @@
 
     id="chat-input"
     autocomplete="off"
-    placeholder="Message"
+    placeholder="輸入訊息"
     enterkeyhint="send"
     maxlength="500">
 </textarea>

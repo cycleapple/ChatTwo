@@ -77,7 +77,7 @@
                     <ChannelSelector />
                 </div>
 
-                <button type="submit">Send</button>
+                <button type="submit">傳送</button>
             </form>
         </section>
     </div>

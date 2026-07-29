@@ -37,7 +37,7 @@ public class Fonts : ISettingsTab
                     Mutable.GlobalFontV2 = r.Result;
             });
             ImGui.SameLine();
-            if (ImGui.Button("Reset##global"))
+            if (ImGui.Button("重設##global"))
                 Mutable.GlobalFontV2 = new SingleFontSpec{ FontId = new DalamudAssetFontAndFamilyId(DalamudAsset.NotoSansKrRegular), SizePt = 12.75f };
 
             ImGuiUtil.HelpText(string.Format(Language.Options_Font_Description, Plugin.PluginName));
@@ -52,7 +52,7 @@ public class Fonts : ISettingsTab
                     Mutable.JapaneseFontV2 = r.Result;
             });
             ImGui.SameLine();
-            if (ImGui.Button("Reset##japanese"))
+            if (ImGui.Button("重設##japanese"))
                 Mutable.JapaneseFontV2 = new SingleFontSpec{ FontId = new DalamudAssetFontAndFamilyId(DalamudAsset.NotoSansJpMedium), SizePt = 12.75f };
 
             ImGuiUtil.HelpText(string.Format(Language.Options_JapaneseFont_Description, Plugin.PluginName));
@@ -65,7 +65,7 @@ public class Fonts : ISettingsTab
                     Mutable.ItalicFontV2 = r.Result;
             });
             ImGui.SameLine();
-            if (ImGui.Button("Reset##italic"))
+            if (ImGui.Button("重設##italic"))
             {
                 Mutable.ItalicEnabled = false;
                 Mutable.ItalicFontV2 = new SingleFontSpec{ FontId = new DalamudAssetFontAndFamilyId(DalamudAsset.NotoSansKrRegular), SizePt = 12.75f };
