@@ -14,8 +14,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="MessagePack" Version="3.1.4" />
-        <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.0" />
+        <PackageReference Include="MessagePack" Version="3.1.8" />
+        <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.18" />
+        <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.1.12" />
         <PackageReference Include="Pidgin" Version="3.3.0" />
         <PackageReference Include="SixLabors.ImageSharp" Version="3.1.12" />
         <PackageReference Include="Watson.Lite" Version="6.3.9" />
