@@ -566,7 +566,7 @@ internal static class LanguageOverrideExt
     {
         LanguageOverride.None => Language.LanguageOverride_None,
         LanguageOverride.ChineseSimplified => "简体中文",
-        LanguageOverride.ChineseTraditional => "繁體中文",
+        LanguageOverride.ChineseTraditional => "繁體中文（台灣）",
         LanguageOverride.Dutch => "Nederlands",
         LanguageOverride.English => "English",
         LanguageOverride.French => "Français",
