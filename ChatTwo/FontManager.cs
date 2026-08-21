@@ -20,7 +20,7 @@ public class FontManager
     internal readonly byte[] GameSymFont;
 
     private ushort[] Ranges;
-    private ushort[] TcRange;
+    private ushort[] TcRange = [];
     private ushort[] JpRange;
 
 
