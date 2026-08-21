@@ -3,6 +3,7 @@ using Dalamud.Interface.GameFonts;
 using Dalamud.Interface.ManagedFontAtlas;
 using Dalamud.Interface.Utility;
 using Dalamud.Bindings.ImGui;
+using System.Text.Unicode;
 
 namespace ChatTwo;
 
@@ -19,6 +20,7 @@ public class FontManager
     internal readonly byte[] GameSymFont;
 
     private ushort[] Ranges;
+    private ushort[] TcRange;
     private ushort[] JpRange;
 
 
@@ -91,6 +93,12 @@ public class FontManager
                 ranges.Add(extraRange.Range());
 
         Ranges = BuildRange(null, ranges.ToArray());
+        TcRange = default(FluentGlyphRangeBuilder)
+            .WithLanguage("zh-TW")
+            .With(
+                UnicodeRanges.CjkSymbolsandPunctuation,
+                UnicodeRanges.HalfwidthandFullwidthForms)
+            .BuildExact();
         JpRange = BuildRange(GlyphRangesJapanese.GlyphRanges);
     }
 
@@ -118,6 +126,9 @@ public class FontManager
                     config.MergeFont = Plugin.Config.GlobalFontV2.FontId.AddToBuildToolkit(tk, config);
 
                     config.SizePt = Plugin.Config.JapaneseFontV2.SizePt;
+                    config.GlyphRanges = TcRange;
+                    Plugin.Config.JapaneseFontV2.FontId.AddToBuildToolkit(tk, config);
+
                     config.GlyphRanges = JpRange;
                     Plugin.Config.JapaneseFontV2.FontId.AddToBuildToolkit(tk, config);
 
@@ -138,6 +149,9 @@ public class FontManager
                         config.MergeFont = Plugin.Config.ItalicFontV2.FontId.AddToBuildToolkit(tk, config);
 
                         config.SizePt = Plugin.Config.JapaneseFontV2.SizePt;
+                        config.GlyphRanges = TcRange;
+                        Plugin.Config.JapaneseFontV2.FontId.AddToBuildToolkit(tk, config);
+
                         config.GlyphRanges = JpRange;
                         Plugin.Config.JapaneseFontV2.FontId.AddToBuildToolkit(tk, config);
 
