@@ -1,3 +1,4 @@
+using ModifierFlag = FFXIVClientStructs.FFXIV.Client.System.Input.KeyModifierFlag;
 namespace ChatTwo.GameFunctions.Types;
 
 [Flags]

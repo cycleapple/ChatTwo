@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -258,6 +258,8 @@ public readonly struct WorkingRawRow(RawRow row) : IExcelRow<WorkingRawRow>
 {
     public uint RowId => row.RowId;
     public RawRow RawRow => row;
+    public ExcelPage ExcelPage => row.ExcelPage;
+    public uint RowOffset => row.RowOffset;
 
     static WorkingRawRow IExcelRow<WorkingRawRow>.Create(ExcelPage page, uint offset, uint row) =>
         new(new RawRow(page, offset, row));

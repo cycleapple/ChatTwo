@@ -1,3 +1,4 @@
+using ModifierFlag = FFXIVClientStructs.FFXIV.Client.System.Input.KeyModifierFlag;
 using System.Collections;
 using System.Collections.Concurrent;
 using ChatTwo.Code;

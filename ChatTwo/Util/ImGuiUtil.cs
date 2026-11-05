@@ -1,3 +1,4 @@
+using ModifierFlag = FFXIVClientStructs.FFXIV.Client.System.Input.KeyModifierFlag;
 using System.Numerics;
 using System.Text;
 using ChatTwo.Code;
